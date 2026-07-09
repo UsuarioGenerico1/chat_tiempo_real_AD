@@ -1,0 +1,30 @@
+<div style="max-width: 400px; margin: 0 auto;">
+  @if (currentView() === 'login') {
+    <div style="border: 1px solid #ccc; padding: 20px; border-radius: 8px;">
+      <h2>Iniciar Sesión</h2>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <input [(ngModel)]="loginForm.username" placeholder="Usuario" style="padding: 10px;">
+        <input [(ngModel)]="loginForm.password" type="password" placeholder="Contraseña" style="padding: 10px;">
+        <button (click)="onLogin()" style="padding: 10px; background: #007bff; color: white; border: none; cursor: pointer;">Entrar</button>
+      </div>
+      <p style="text-align: center; margin-top: 15px;">
+        ¿No tienes cuenta? <a href="#" (click)="currentView.set('register'); $event.preventDefault()">Regístrate aquí</a>
+      </p>
+    </div>
+  }
+
+  @if (currentView() === 'register') {
+    <div style="border: 1px solid #ccc; padding: 20px; border-radius: 8px;">
+      <h2>Registro</h2>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <input [(ngModel)]="registerForm.name" placeholder="Nombre completo" style="padding: 10px;">
+        <input [(ngModel)]="registerForm.username" placeholder="Usuario" style="padding: 10px;">
+        <input [(ngModel)]="registerForm.password" type="password" placeholder="Contraseña" style="padding: 10px;">
+        <button (click)="onRegister()" style="padding: 10px; background: #28a745; color: white; border: none; cursor: pointer;">Registrarse</button>
+      </div>
+      <p style="text-align: center; margin-top: 15px;">
+        ¿Ya tienes cuenta? <a href="#" (click)="currentView.set('login'); $event.preventDefault()">Inicia sesión</a>
+      </p>
+    </div>
+  }
+</div>

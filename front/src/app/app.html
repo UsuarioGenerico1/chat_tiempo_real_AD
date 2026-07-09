@@ -1,0 +1,13 @@
+<div style="max-width: 600px; margin: 50px auto; font-family: sans-serif;">
+  
+  <h1 style="text-align: center; margin-bottom: 30px;">Mi App de Mensajería</h1>
+
+  @if (!authService.currentUser()) {
+    <app-login></app-login>
+  } 
+  
+  @else {
+    <app-chat></app-chat>
+  }
+
+</div>
